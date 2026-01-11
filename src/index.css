@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  /* Ported from the storefront's live palette (ecommerce-website/src/app/globals.css) so the admin dashboard and storefront read as one brand. */
+  --color-primary-color: #ffffff;
+  --color-background-color: #fbf9f5;
+  --color-secondary-color: #ff5014;
+  --color-base-color: #111827;
+  --color-secondbase-color: #6b7280;
+  --color-third-color: #ea580c;
+  --color-highlight: #5e6062;
+  --color-input-color: #5d5d5d;
+  --color-error: #dc2626;
+  --color-success: #16a34a;
+  --color-warning: #d97706;
+}
+
+html,
+body {
+  font-family: "Figtree", sans-serif;
+  scroll-behavior: smooth;
+  background-color: #fbf9f5;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #111827, #111827);
+  margin-left: 2px;
+  margin-right: 2px;
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ffffff;
+}
+th {
+  border-bottom: 0px solid #0a0a08 !important;
+}
+
+.swiper-pagination-bullet {
+  width: 15px !important;
+  height: 15px !important;
+  background-color: #ff5014 !important;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.active {
+  color: #f9f9f9 !important;
+}
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* :root (light mode) — ported from the storefront's palette for brand consistency. */
+:root {
+  --radius: 0.625rem;
+
+  /* Background & Foreground Colors */
+  --background: #ffffff;
+  --foreground: #111827;
+
+  /* Card Colors */
+  --card: #ffffff;
+  --card-foreground: #111827;
+
+  /* Popover Colors */
+  --popover: #ffffff;
+  --popover-foreground: #111827;
+
+  /* Primary and Secondary Colors */
+  --primary: #ff5014;
+  --primary-foreground: #ffffff;
+  --secondary: #1f2937;
+  --secondary-foreground: #ffffff;
+
+  /* Muted Colors */
+  --muted: #f3f4f6;
+  --muted-foreground: #6b7280;
+
+  /* Accent Colors */
+  --accent: #ff5014;
+  --accent-foreground: #ffffff;
+
+  /* Destructive Colors */
+  --destructive: #dc2626;
+
+  /* Border Colors */
+  --border: #e5e7eb;
+
+  /* Input Colors */
+  --input: #e5e7eb;
+
+  /* Ring Colors */
+  --ring: #ff5014;
+
+  /* Chart Colors */
+  --chart-1: #ff5014;
+  --chart-2: #3b82f6;
+  --chart-3: #16a34a;
+  --chart-4: #d97706;
+  --chart-5: #8b5cf6;
+
+  /* Sidebar Colors */
+  --sidebar: #ffffff;
+  --sidebar-foreground: #111827;
+  --sidebar-primary: #ff5014;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f9fafb;
+  --sidebar-accent-foreground: #ff5014;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: #ff5014;
+}
+
+/* .dark (dark mode) — ported from the storefront's dark palette. */
+.dark {
+  --background: #111827;
+  --foreground: #f9fafb;
+
+  /* Card Colors */
+  --card: #1f2937;
+  --card-foreground: #f9fafb;
+
+  /* Popover Colors */
+  --popover: #1f2937;
+  --popover-foreground: #f9fafb;
+
+  /* Primary and Secondary Colors */
+  --primary: #ff5014;
+  --primary-foreground: #ffffff;
+  --secondary: #374151;
+  --secondary-foreground: #f9fafb;
+
+  /* Muted Colors */
+  --muted: #374151;
+  --muted-foreground: #9ca3af;
+
+  /* Accent Colors */
+  --accent: #ff5014;
+  --accent-foreground: #ffffff;
+
+  /* Destructive Colors */
+  --destructive: #ef4444;
+
+  /* Border Colors */
+  --border: #374151;
+
+  /* Input Colors */
+  --input: #374151;
+
+  /* Ring Colors */
+  --ring: #ff5014;
+
+  /* Chart Colors */
+  --chart-1: #ff5014;
+  --chart-2: #3b82f6;
+  --chart-3: #16a34a;
+  --chart-4: #d97706;
+  --chart-5: #8b5cf6;
+
+  /* Sidebar Colors */
+  --sidebar: #1f2937;
+  --sidebar-foreground: #f9fafb;
+  --sidebar-primary: #ff5014;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #374151;
+  --sidebar-accent-foreground: #ff5014;
+  --sidebar-border: #374151;
+  --sidebar-ring: #ff5014;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* SpinLoader: the brand bag hops while its shadow squashes underneath. */
+@keyframes loader-hop {
+  0%, 100% { transform: translateY(0) rotate(-4deg); }
+  50% { transform: translateY(-14px) rotate(4deg); }
+}
+
+@keyframes loader-shadow {
+  0%, 100% { transform: scaleX(1); opacity: 0.25; }
+  50% { transform: scaleX(0.55); opacity: 0.1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loader-hop, .loader-shadow { animation: none; }
+}
